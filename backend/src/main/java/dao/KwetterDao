@@ -1,0 +1,17 @@
+package backend.src.main.java.dao;
+import backend.src.main.java.domain.Kweet;
+import backend.src.main.java.domain.User;
+import java.util.ArrayList;
+
+public interface KwetterDao {
+    void changeUsername(Long id, String username);
+    void changeBio(Long id, String bio);
+    void postKweet(User user, Kweet kweet);
+    void followUser(User user, User userToFollow);
+    User loadUserInformation(Long id);
+    ArrayList<Kweet> getLastTenKweets(Long id);
+    ArrayList<User> getFollowers(User user);
+    ArrayList<User> getFollowings(Long id);
+    ArrayList<Kweet> findKweet(String searchterm);
+    ArrayList<Kweet> loadKweets(Long id);
+}
